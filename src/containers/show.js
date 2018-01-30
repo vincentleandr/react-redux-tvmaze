@@ -4,12 +4,10 @@ import * as actionCreators from '../actions/index';
 
 import Box from '../components/box'
 
-class App extends React.Component{
+class Show extends React.Component{
     render() {
         return (
-            <div>
-                <Box name={this.props.name} />
-            </div>
+            <Box handleClick={this.props.loadShow} name={this.props.title} network={this.props.content} />
         );
     }
 }
@@ -18,4 +16,4 @@ const mapStateToProps = (state) => {
     return state;
 }
 
-export default connect (mapStateToProps, actionCreators)(App);
+export default connect (mapStateToProps, actionCreators)(Show);

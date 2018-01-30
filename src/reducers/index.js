@@ -1,30 +1,22 @@
-import * as types from '../actions/index';
-
 let defaultState = {
-    name: ''
+    title: '',
+    content: ''
 }
 
-const mainReducer = (state = defaultState.name, action) => {
+const mainReducer = (state = defaultState, action) => {
     
-    /*
     if(action.type === "SHOW_TV") {
         return {
             ...state,
-            name: action.name
+            title: action.title,
+            content: action.content
         }
     } else {
         return {
             ...state
         }
     }
-    */
-
-    switch(action.type) {
-        case types.SHOW_TV:
-            return Object.assign(state, action.name); 
-        default: 
-            return state;
-    }
+    
 };
 
 export default mainReducer;

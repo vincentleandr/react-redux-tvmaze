@@ -1,17 +1,19 @@
 import axios from 'axios';
 
-export function loadTv() {
+export function loadShow() {
     return (dispatch) => {
-        return axios.get('http://api.tvmaze.com/search/shows?q=sherlock')
+        return axios.get('https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=')
         .then((response) => {
-            dispatch(showTv(response.name));
+            dispatch(showTv(response.title, response.content));
+            
         })
     }
 }
 
-export function showTv(showname) {
+export function showTv(title, content) {
     return{
         type: "SHOW_TV",
-        name: showname
+        title: title,
+        content: content
     }
 }

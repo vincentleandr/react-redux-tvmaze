@@ -5,11 +5,19 @@ import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers/index';
 
-import App from './containers/app';
+import Show from './containers/show';
 
 import './stylesheets/index.css';
 
 let store = createStore(reducers, applyMiddleware(thunk));
+
+class App extends React.Component {
+    render() {
+        return(
+            <Show />
+        );
+    }
+}
 
 ReactDOM.render(
 <Provider store={store}>
