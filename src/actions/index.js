@@ -1,19 +1,22 @@
 import axios from 'axios';
 
-export function loadShow() {
+
+export function loadShow(show) {
     return (dispatch) => {
-        return axios.get('https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=')
+
+        const url = 'http://api.tvmaze.com/singlesearch/shows?q='+show;
+        return axios.get(url)
         .then((response) => {
-            dispatch(showTv(response.title, response.content));
+            dispatch(showTv(response.data.name, response.data.network.name));
             
         })
     }
 }
 
-export function showTv(title, content) {
+export function showTv(name, network) {
     return{
         type: "SHOW_TV",
-        title: title,
-        content: content
+        name: name,
+        network: network
     }
 }

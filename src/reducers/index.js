@@ -1,20 +1,22 @@
 let defaultState = {
-    title: '',
-    content: ''
+    name: '',
+    network: ''
 }
 
 const mainReducer = (state = defaultState, action) => {
     
-    if(action.type === "SHOW_TV") {
-        return {
-            ...state,
-            title: action.title,
-            content: action.content
-        }
-    } else {
-        return {
-            ...state
-        }
+    switch (action.type) {
+        case "SHOW_TV":
+            return {
+                ...state,
+                name: action.name,
+                network: action.network
+            };
+
+        default:
+            return {
+                ...state
+            };
     }
     
 };
