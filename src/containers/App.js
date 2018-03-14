@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import * as actionCreators from '../actions/index';
+import * as actionCreators from '../actions/tvshowAction';
 
-import Box from '../components/box'
+import Display from '../components/display';
 
-class Show extends React.Component{
+class App extends React.Component{
     constructor(props) {
         super(props);
 
@@ -27,19 +27,17 @@ class Show extends React.Component{
         this.setState({input: ''});
     }
 
-
     render() {
         return (
-            <Box handleClick={this.props.loadshow} name={this.props.name} network={this.props.network}>
+            <Display 
+                    name={this.props.name} 
+                    image={this.props.image}
+            >
                 <form onSubmit={this.onSubmitForm}>
-                    <input id="input" value={this.state.input} onChange={this.onInputChange} />
-                    
+                    <input value={this.state.input} onChange={this.onInputChange} />
+                    <button onClick={this.props.loadshow}>Show Name</button>
                 </form>
-                <button 
-                    onClick={this.props.loadshow}
-                >Show Name</button>
-                
-            </Box>
+            </Display>
         );
     }
 }
@@ -48,4 +46,4 @@ const mapStateToProps = (state) => {
     return state;
 }
 
-export default connect (mapStateToProps, actionCreators)(Show);
+export default connect (mapStateToProps, actionCreators)(App);
