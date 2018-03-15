@@ -4,6 +4,8 @@ import * as actionCreators from '../actions/tvshowAction';
 
 import Display from '../components/display';
 
+import style from './style.css';
+
 class App extends React.Component{
     constructor(props) {
         super(props);
