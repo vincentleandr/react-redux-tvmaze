@@ -1,6 +1,6 @@
 let defaultState = {
-    name: 'Game of Thrones',
-    image: 'http://static.tvmaze.com/uploads/images/medium_portrait/143/359013.jpg'
+    name: '',
+    image: ''
 }
 
 const tvshowReducer = (state = defaultState, action) => {

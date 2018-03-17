@@ -4,7 +4,7 @@ import * as actionCreators from '../actions/tvshowAction';
 
 import Display from '../components/display';
 
-import style from './style.css';
+import style from './styles/main.css';
 
 class App extends React.Component{
     constructor(props) {
@@ -31,15 +31,20 @@ class App extends React.Component{
 
     render() {
         return (
-            <Display 
-                    name={this.props.name} 
-                    image={this.props.image}
-            >
-                <form onSubmit={this.onSubmitForm}>
-                    <input value={this.state.input} onChange={this.onInputChange} />
-                    <button onClick={this.props.loadshow}>Show Name</button>
-                </form>
-            </Display>
+            <div class="container">
+                <div className="searchbar-container">
+                    <form onSubmit={this.onSubmitForm}>
+                        <input className="searchbar" value={this.state.input} onChange={this.onInputChange} placeholder="Try 'Game of Thrones'"/>
+                        <button className="searchbtn" type="submit" onClick={this.props.loadshow}>Search</button>
+                    </form>
+                </div>
+                <Display 
+                        name={this.props.name} 
+                        image={this.props.image}
+                >
+                </Display>
+                
+            </div>
         );
     }
 }

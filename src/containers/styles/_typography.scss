@@ -1,0 +1,34 @@
+@import 'https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900';
+@import 'https://use.fontawesome.com/releases/v5.0.8/css/solid.css';
+@import 'https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css';
+
+$font-primary: 'Circular-Std';
+$font-secondary: 'Nunito', sans-serif;
+
+@font-face {
+    font-family: $font-primary;
+    src: url("../../resources/CircularStd-Book.woff") format('woff');
+    font-style: normal;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: $font-primary;
+    src: url("../../resources/CircularStd-Medium.woff") format('woff');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: $font-primary;
+    src: url("../../resources/CircularStd-Bold.woff") format('woff');
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: $font-primary;
+    src: url("../../resources/CircularStd-Black.woff") format('woff');
+    font-style: normal;
+    font-weight: 800;
+}
