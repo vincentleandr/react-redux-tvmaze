@@ -21,49 +21,57 @@
   src: url("../../resources/CircularStd-Black.woff") format("woff");
   font-style: normal;
   font-weight: 800; }
-body {
-  background-color: #ffffff; }
-
-.container {
+body, .container {
+  background-color: #ffffff;
   margin: 0;
   padding: 0; }
 
 .searchbar-container {
   width: 800px;
-  margin: auto; }
-  .searchbar-container form {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
   .searchbar-container .searchbar {
-    width: 600px;
-    height: 80px;
-    border: 1px solid #dddddd;
-    border-radius: 5px 0px 0px 5px;
+    width: 100%;
+    height: 90px;
+    border: 2px solid #dddddd;
+    border-radius: 5px;
     text-indent: 25px;
     font-family: "Circular-Std";
     font-size: 30px;
-    font-weight: 200;
-    box-shadow: 10px 4px 20px 0px #dddddd; }
+    font-weight: 400;
+    color: #484848;
+    box-shadow: 4px 6px 30px 0px #dddddd; }
     .searchbar-container .searchbar:focus {
       outline: 0; }
   .searchbar-container .searchbar::placeholder {
     color: #dddddd; }
   .searchbar-container .searchbtn {
-    height: 82px;
+    height: 60px;
     border: none;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 5px;
     background-color: #ff6b6b;
     padding: 0 30px;
     font-family: "Circular-Std";
     font-size: 30px;
-    font-weight: 200;
+    font-weight: 600;
     color: #ffffff;
     cursor: pointer;
-    box-shadow: 10px 4px 20px 0px #dddddd; }
+    transition: .3s;
+    position: absolute;
+    right: 20px; }
     .searchbar-container .searchbtn:focus {
       outline: 0; }
+    .searchbar-container .searchbtn:hover {
+      background-color: #ff5c5c; }
+
+.hidden {
+  display: none; }
+
+.show {
+  display: block; }
 
 /*# sourceMappingURL=main.css.map */

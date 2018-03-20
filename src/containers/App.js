@@ -11,7 +11,8 @@ class App extends React.Component{
         super(props);
 
         this.state = {
-            input: ''
+            input: '',
+            showDisp: 'hidden'
         }
 
         this.onInputChange = this.onInputChange.bind(this);
@@ -26,23 +27,28 @@ class App extends React.Component{
         event.preventDefault();
 
         this.props.loadShow(this.state.input);
-        this.setState({input: ''});
+        this.setState({
+            input: '',
+            showDisp: 'show'
+        });
     }
 
     render() {
         return (
             <div class="container">
-                <div className="searchbar-container">
-                    <form onSubmit={this.onSubmitForm}>
-                        <input className="searchbar" value={this.state.input} onChange={this.onInputChange} placeholder="Try 'Game of Thrones'"/>
+                <form onSubmit={this.onSubmitForm}>
+                    <div className="searchbar-container">
+                        <input className="searchbar" value={this.state.input} onChange={this.onInputChange} placeholder="Try 'Game of Thrones'" autofocus="autofocus"/>
                         <button className="searchbtn" type="submit" onClick={this.props.loadshow}>Search</button>
-                    </form>
+                    </div>
+                </form>
+                <div className={this.state.showDisp}>
+                    <Display 
+                            name={this.props.name} 
+                            image={this.props.image}
+                    >
+                    </Display>
                 </div>
-                <Display 
-                        name={this.props.name} 
-                        image={this.props.image}
-                >
-                </Display>
                 
             </div>
         );
