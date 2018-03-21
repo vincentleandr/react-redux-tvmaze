@@ -12,7 +12,8 @@ class App extends React.Component{
 
         this.state = {
             input: '',
-            showDisp: 'hidden'
+            showDisp: 'hidden',
+            gotoTop: ''
         }
 
         this.onInputChange = this.onInputChange.bind(this);
@@ -29,7 +30,8 @@ class App extends React.Component{
         this.props.loadShow(this.state.input);
         this.setState({
             input: '',
-            showDisp: 'show'
+            showDisp: 'show',
+            gotoTop: 'top'
         });
     }
 
@@ -37,15 +39,15 @@ class App extends React.Component{
         return (
             <div class="container">
                 <form onSubmit={this.onSubmitForm}>
-                    <div className="searchbar-container">
+                    <div className={"searchbar-container animated fadeIn " + this.state.gotoTop}>
                         <input className="searchbar" value={this.state.input} onChange={this.onInputChange} placeholder="Try 'Game of Thrones'" autofocus="autofocus"/>
                         <button className="searchbtn" type="submit" onClick={this.props.loadshow}>Search</button>
                     </div>
                 </form>
-                <div className={this.state.showDisp}>
+                <div className={"display-container animated fadeIn " + this.state.showDisp}>
                     <Display 
-                            name={this.props.name} 
-                            image={this.props.image}
+                        name={this.props.name} 
+                        image={this.props.image}
                     >
                     </Display>
                 </div>

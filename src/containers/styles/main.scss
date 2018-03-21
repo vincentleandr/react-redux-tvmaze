@@ -1,5 +1,6 @@
 @import 'typography';
 @import 'color';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
 
 body, .container {
     background-color: $white;
@@ -15,6 +16,7 @@ body, .container {
     justify-content: center;
     align-items: center;
     position: relative;
+    transition: .3s;
 
     .searchbar {
         width: 100%;
@@ -27,7 +29,6 @@ body, .container {
         font-weight: 400;
         color: $softblack;
         box-shadow: 4px 6px 30px 0px $lightgray;
-        
 
         &:focus {
             outline: 0;
@@ -62,6 +63,15 @@ body, .container {
         }
 
     }
+}
+
+.searchbar-container.top {
+    height: 150px;
+}
+
+.display-container {
+    font-family: $font-primary;
+    text-align: center;
 }
 
 .hidden {
