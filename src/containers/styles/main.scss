@@ -66,12 +66,50 @@ body, .container {
 }
 
 .searchbar-container.top {
-    height: 150px;
+    width: 650px;
+    height: 130px;
+
+    .searchbar {
+        height: 70px;
+        font-size: 24px;
+    }
+
+    .searchbtn {
+        height: 50px;
+        font-size: 24px;
+    }
 }
 
 .display-container {
     font-family: $font-primary;
-    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.display-inner-container {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+    .tv-img {
+        width: 40%;
+
+        img {
+            width: 100%;
+        }
+    }
+    
+    .tv-details {
+        width: 55%;
+        
+        h1 {
+            font-size: 65px;
+            font-weight: 800;
+            margin-top: 0;
+            line-height: 0.85;
+        }
+    }
 }
 
 .hidden {

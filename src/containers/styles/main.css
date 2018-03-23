@@ -71,11 +71,36 @@ body, .container {
       background-color: #ff5c5c; }
 
 .searchbar-container.top {
-  height: 150px; }
+  width: 650px;
+  height: 130px; }
+  .searchbar-container.top .searchbar {
+    height: 70px;
+    font-size: 24px; }
+  .searchbar-container.top .searchbtn {
+    height: 50px;
+    font-size: 24px; }
 
 .display-container {
   font-family: "Circular-Std";
-  text-align: center; }
+  width: 100%;
+  margin-top: 30px; }
+
+.display-inner-container {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between; }
+  .display-inner-container .tv-img {
+    width: 40%; }
+    .display-inner-container .tv-img img {
+      width: 100%; }
+  .display-inner-container .tv-details {
+    width: 55%; }
+    .display-inner-container .tv-details h1 {
+      font-size: 65px;
+      font-weight: 800;
+      margin-top: 0;
+      line-height: 0.85; }
 
 .hidden {
   display: none; }

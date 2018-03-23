@@ -6,7 +6,7 @@ export function loadShow(showName) {
         const url = 'http://api.tvmaze.com/singlesearch/shows?q='+showName;
         return axios.get(url)
         .then((response) => {
-            dispatch(loadDetails(response.data.name, response.data.image.medium));
+            dispatch(loadDetails(response.data.name, response.data.image.original));
             
         })
     }

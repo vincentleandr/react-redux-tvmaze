@@ -3,10 +3,17 @@ import React from 'react';
 class Display extends React.Component {
     render() {
         return (
-            <div>
+            <div className="display-inner-container animated fadeIn">
                 
-                <h1>{this.props.name}</h1>
-                <img src={this.props.image} />
+                <div className="tv-img">
+                    <img src={this.props.image} />
+                </div>
+                
+                <div className="tv-details">
+                    <h1>{this.props.name}</h1>
+                </div>
+                
+                
                 
             </div>
             
