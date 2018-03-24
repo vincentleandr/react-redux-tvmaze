@@ -1,7 +1,10 @@
+/* Base Styles 
+================================= */
 @import "https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900";
 @import "https://use.fontawesome.com/releases/v5.0.8/css/solid.css";
 @import "https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css";
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
+@import "https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css";
 @font-face {
   font-family: "Circular-Std";
   src: url("../../resources/CircularStd-Book.woff") format("woff");
@@ -22,8 +25,12 @@
   src: url("../../resources/CircularStd-Black.woff") format("woff");
   font-style: normal;
   font-weight: 800; }
+/* Components Styles 
+================================= */
 body, .container {
-  background-color: #ffffff;
+  background-color: #141D26;
+  color: #FFFFFF;
+  font-family: "Circular-Std";
   margin: 0;
   padding: 0; }
 
@@ -38,29 +45,26 @@ body, .container {
   transition: .3s; }
   .searchbar-container .searchbar {
     width: 100%;
-    height: 90px;
-    border: 2px solid #dddddd;
-    border-radius: 5px;
+    height: 85px;
+    background-color: #586B7C;
+    border: none;
+    border-radius: 10px;
     text-indent: 25px;
     font-family: "Circular-Std";
     font-size: 30px;
     font-weight: 400;
-    color: #484848;
-    box-shadow: 4px 6px 30px 0px #dddddd; }
+    color: #FFFFFF; }
     .searchbar-container .searchbar:focus {
       outline: 0; }
   .searchbar-container .searchbar::placeholder {
-    color: #dddddd; }
+    color: #CDD2D7;
+    opacity: .6; }
   .searchbar-container .searchbtn {
-    height: 60px;
+    background-color: transparent;
     border: none;
-    border-radius: 5px;
-    background-color: #ff6b6b;
-    padding: 0 30px;
-    font-family: "Circular-Std";
     font-size: 30px;
-    font-weight: 600;
-    color: #ffffff;
+    color: #CDD2D7;
+    opacity: .6;
     cursor: pointer;
     transition: .3s;
     position: absolute;
@@ -68,44 +72,59 @@ body, .container {
     .searchbar-container .searchbtn:focus {
       outline: 0; }
     .searchbar-container .searchbtn:hover {
-      background-color: #ff5c5c; }
+      color: #bfc5cc; }
 
 .searchbar-container.top {
-  width: 650px;
-  height: 130px; }
+  width: 500px;
+  height: 110px; }
   .searchbar-container.top .searchbar {
-    height: 70px;
+    height: 60px;
     font-size: 24px; }
   .searchbar-container.top .searchbtn {
-    height: 50px;
     font-size: 24px; }
 
 .display-container {
-  font-family: "Circular-Std";
   width: 100%;
-  margin-top: 30px; }
+  margin-top: 50px; }
 
 .display-inner-container {
-  width: 60%;
+  width: 55%;
   margin: auto;
   display: flex;
   justify-content: space-between; }
-  .display-inner-container .tv-img {
-    width: 40%; }
-    .display-inner-container .tv-img img {
-      width: 100%; }
-  .display-inner-container .tv-details {
-    width: 55%; }
-    .display-inner-container .tv-details h1 {
-      font-size: 65px;
-      font-weight: 800;
-      margin-top: 0;
-      line-height: 0.85; }
+
+.shows-img {
+  width: 45%; }
+  .shows-img img {
+    width: 100%; }
+
+.shows-details {
+  width: 50%; }
+  .shows-details .shows-title {
+    font-size: 65px;
+    font-weight: 800;
+    margin-top: 0;
+    position: relative; }
+    .shows-details .shows-title:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 75px;
+      border-top: 5px solid #586B7C;
+      opacity: 0.7; }
+  .shows-details .shows-summary {
+    font-size: 16px;
+    font-weight: 200;
+    font-family: "Nunito", sans-serif; }
 
 .hidden {
   display: none; }
 
 .show {
   display: block; }
+
+/* Helper 
+================================= */
 
 /*# sourceMappingURL=main.css.map */

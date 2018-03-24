@@ -6,16 +6,22 @@ export function loadShow(showName) {
         const url = 'http://api.tvmaze.com/singlesearch/shows?q='+showName;
         return axios.get(url)
         .then((response) => {
-            dispatch(loadDetails(response.data.name, response.data.image.original));
+            dispatch(
+                loadDetails(
+                    response.data.image.original, 
+                    response.data.name,
+                    response.data.summary
+                ));
             
         })
     }
 }
 
-export function loadDetails(showName, showImage) {
+export function loadDetails(showImage, showName, showSummary) {
     return{
         type: "LOAD_DETAILS",
+        image: showImage,
         name: showName,
-        image: showImage
+        summary: showSummary
     }
 }

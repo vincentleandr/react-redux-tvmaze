@@ -1,121 +1,17 @@
-@import 'typography';
+/* Base Styles 
+================================= */
 @import 'color';
+@import 'typography';
+
+/* Components Styles 
+================================= */
+@import 'app';
+@import 'components';
+
+/* Helper 
+================================= */
 @import 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css';
+@import 'https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css';
 
-body, .container {
-    background-color: $white;
-    margin: 0;
-    padding: 0;
-}
 
-.searchbar-container {
-    width: 800px;
-    height: 100vh;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    transition: .3s;
 
-    .searchbar {
-        width: 100%;
-        height: 90px;
-        border: 2px solid $lightgray;
-        border-radius: 5px;
-        text-indent: 25px;
-        font-family: $font-primary;
-        font-size: 30px;
-        font-weight: 400;
-        color: $softblack;
-        box-shadow: 4px 6px 30px 0px $lightgray;
-
-        &:focus {
-            outline: 0;
-        }
-    }
-
-    .searchbar::placeholder {
-        color: $lightgray;
-    }
-
-    .searchbtn {
-        height: 60px;
-        border: none;
-        border-radius: 5px;
-        background-color: $pastelred;
-        padding: 0 30px;
-        font-family: $font-primary;
-        font-size: 30px;
-        font-weight: 600;
-        color: $white;
-        cursor: pointer;
-        transition: .3s;
-        position: absolute;
-        right: 20px;
-
-        &:focus {
-            outline: 0;
-        }
-
-        &:hover {
-            background-color: darken($pastelred, 3%);
-        }
-
-    }
-}
-
-.searchbar-container.top {
-    width: 650px;
-    height: 130px;
-
-    .searchbar {
-        height: 70px;
-        font-size: 24px;
-    }
-
-    .searchbtn {
-        height: 50px;
-        font-size: 24px;
-    }
-}
-
-.display-container {
-    font-family: $font-primary;
-    width: 100%;
-    margin-top: 30px;
-}
-
-.display-inner-container {
-    width: 60%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-
-    .tv-img {
-        width: 40%;
-
-        img {
-            width: 100%;
-        }
-    }
-    
-    .tv-details {
-        width: 55%;
-        
-        h1 {
-            font-size: 65px;
-            font-weight: 800;
-            margin-top: 0;
-            line-height: 0.85;
-        }
-    }
-}
-
-.hidden {
-    display: none;
-}
-
-.show {
-    display: block;
-}

@@ -1,6 +1,7 @@
 let defaultState = {
+    image: '',
     name: '',
-    image: ''
+    summary: ''
 }
 
 const tvshowReducer = (state = defaultState, action) => {
@@ -9,8 +10,9 @@ const tvshowReducer = (state = defaultState, action) => {
         case "LOAD_DETAILS":
             return {
                 ...state,
+                image: action.image,
                 name: action.name,
-                image: action.image
+                summary: action.summary
             };
 
         default:

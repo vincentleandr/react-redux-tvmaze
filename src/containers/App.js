@@ -4,7 +4,7 @@ import * as actionCreators from '../actions/tvshowAction';
 
 import Display from '../components/display';
 
-import style from './styles/main.css';
+import './styles/main.css';
 
 class App extends React.Component{
     constructor(props) {
@@ -37,17 +37,18 @@ class App extends React.Component{
 
     render() {
         return (
-            <div class="container">
+            <div className="container">
                 <form onSubmit={this.onSubmitForm}>
                     <div className={"searchbar-container animated fadeIn " + this.state.gotoTop}>
-                        <input className="searchbar" value={this.state.input} onChange={this.onInputChange} placeholder="Try 'Game of Thrones'" autofocus="autofocus"/>
-                        <button className="searchbtn" type="submit" onClick={this.props.loadshow}>Search</button>
+                        <input className="searchbar" value={this.state.input} onChange={this.onInputChange} placeholder="Try 'Game of Thrones'" autoFocus="autofocus"/>
+                        <button className="searchbtn" type="submit" onClick={this.props.loadshow}><i className="fa fa-search fa-fw"></i></button>
                     </div>
                 </form>
                 <div className={"display-container animated fadeIn " + this.state.showDisp}>
                     <Display 
-                        name={this.props.name} 
                         image={this.props.image}
+                        name={this.props.name} 
+                        summary={this.props.summary}
                     >
                     </Display>
                 </div>
