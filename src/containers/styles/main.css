@@ -1,7 +1,7 @@
 /* Base Styles 
 ================================= */
 @import "https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900";
-@import "https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700";
+@import "https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700";
 @import "https://use.fontawesome.com/releases/v5.0.8/css/solid.css";
 @import "https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css";
 @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
@@ -115,9 +115,20 @@ body, .container {
       border-top: 5px solid #586B7C;
       opacity: 0.7; }
   .shows-details .shows-summary {
+    font-size: 16px;
+    font-weight: 300;
+    font-family: "Poppins", sans-serif; }
+  .shows-details .shows-rating {
     font-size: 18px;
-    font-weight: 200;
-    font-family: "Nunito", sans-serif; }
+    font-weight: 600;
+    font-family: "Poppins", sans-serif; }
+    .shows-details .shows-rating i {
+      color: #FBEC0B; }
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
 
 .hidden {
   display: none; }

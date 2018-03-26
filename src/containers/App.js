@@ -50,6 +50,8 @@ class App extends React.Component{
                         image={this.props.image}
                         name={this.props.name} 
                         summary={this.props.summary}
+                        genres={this.props.genres}
+                        rating={this.props.rating}
                     >
                     </Display>
                 </div>

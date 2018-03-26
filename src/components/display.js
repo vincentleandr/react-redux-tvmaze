@@ -23,9 +23,6 @@ class Display extends React.Component {
                 convText: this.summaryText
             });
         }
-
-        
-        
     }
     
     componentWillUnmount() {
@@ -42,7 +39,12 @@ class Display extends React.Component {
                 
                 <div className="shows-details">
                     <h1 className="shows-title">{this.props.name}</h1>
-                    <div className="shows-summary">{this.state.convText}</div>
+                    <div className="flex-row">
+                        <span className="shows-rating"><i className="fa fa-star fa-fw"></i> {this.props.rating} / 10.0</span>
+
+                    </div>
+                    <p className="shows-summary">{this.state.convText}</p>
+                    <div>{this.props.genres}</div>
                 </div>
                 
             </div>

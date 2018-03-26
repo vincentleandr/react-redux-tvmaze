@@ -10,18 +10,22 @@ export function loadShow(showName) {
                 loadDetails(
                     response.data.image.original, 
                     response.data.name,
-                    response.data.summary
+                    response.data.summary,
+                    response.data.genres,
+                    response.data.rating.average
                 ));
             
         })
     }
 }
 
-export function loadDetails(showImage, showName, showSummary) {
+export function loadDetails(showImage, showName, showSummary, showGenres, showRating) {
     return{
         type: "LOAD_DETAILS",
         image: showImage,
         name: showName,
-        summary: showSummary
+        summary: showSummary,
+        genres: showGenres,
+        rating: showRating
     }
 }

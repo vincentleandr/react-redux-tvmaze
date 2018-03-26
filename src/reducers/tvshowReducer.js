@@ -1,7 +1,9 @@
 let defaultState = {
     image: '',
     name: '',
-    summary: ''
+    summary: '',
+    genres: '',
+    rating: ''
 }
 
 const tvshowReducer = (state = defaultState, action) => {
@@ -12,7 +14,9 @@ const tvshowReducer = (state = defaultState, action) => {
                 ...state,
                 image: action.image,
                 name: action.name,
-                summary: action.summary
+                summary: action.summary,
+                genres: action.genres,
+                rating: action.rating
             };
 
         default:
