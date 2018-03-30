@@ -6,7 +6,8 @@ class Display extends React.Component {
         super(props);
 
         this.state = {
-            convText: ''
+            convText: '',
+            convGenre: ''
         }
     }
 
@@ -18,9 +19,18 @@ class Display extends React.Component {
         let summaryText = this.props.summary;
         this.summaryText = summaryText.replace(/<p>|<\/p>|<b>|<\/b>|<i>|<\/i>/g, "");
 
+        
+        
+        
+
         if(this.summaryText !== this.state.convText) {
+            const listGenres = this.props.genres;
+            const separateGenres = listGenres.map((genre) => <li key={genre}>{genre}</li>);
+            console.log(separateGenres);
+
             this.setState({
-                convText: this.summaryText
+                convText: this.summaryText,
+                convGenre: separateGenres
             });
         }
     }
@@ -41,10 +51,12 @@ class Display extends React.Component {
                     <h1 className="shows-title">{this.props.name}</h1>
                     <div className="flex-row">
                         <span className="shows-rating"><i className="fa fa-star fa-fw"></i> {this.props.rating} / 10.0</span>
+                        <ul className="shows-genres">
+                            {this.state.convGenre}
+                        </ul>
 
                     </div>
                     <p className="shows-summary">{this.state.convText}</p>
-                    <div>{this.props.genres}</div>
                 </div>
                 
             </div>

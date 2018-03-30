@@ -53,6 +53,18 @@
             color: #FBEC0B;
         }
     }
+
+    .shows-genres {
+        display: flex;
+        align-items: center;
+        list-style: none;
+
+        li {
+            border: 1px solid $white;
+            border-radius: 5px;
+            padding: 5px;
+        }
+    }
 }
 
 .flex-row {

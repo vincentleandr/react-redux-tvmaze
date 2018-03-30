@@ -124,6 +124,14 @@ body, .container {
     font-family: "Poppins", sans-serif; }
     .shows-details .shows-rating i {
       color: #FBEC0B; }
+  .shows-details .shows-genres {
+    display: flex;
+    align-items: center;
+    list-style: none; }
+    .shows-details .shows-genres li {
+      border: 1px solid #FFFFFF;
+      border-radius: 5px;
+      padding: 5px; }
 
 .flex-row {
   display: flex;
