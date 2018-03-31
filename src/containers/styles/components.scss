@@ -46,8 +46,7 @@
 
     .shows-rating {
         font-size: 18px;
-        font-weight: 600;
-        font-family: $font-secondary;
+        font-weight: 200;
 
         i {
             color: #FBEC0B;
@@ -60,9 +59,28 @@
         list-style: none;
 
         li {
-            border: 1px solid $white;
-            border-radius: 5px;
             padding: 5px;
+            margin-right: 5px;
+            font-size: 12px;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                right: -3px;
+                width: 1px;
+                height: 15px;
+                background-color: $lightgray;
+                opacity: 0.3
+            }
+        }
+        
+        li:last-child {
+            margin-right: 0;
+
+            &:after {
+                width: 0;
+            }
         }
     }
 }

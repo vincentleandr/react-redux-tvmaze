@@ -19,14 +19,12 @@ class Display extends React.Component {
         let summaryText = this.props.summary;
         this.summaryText = summaryText.replace(/<p>|<\/p>|<b>|<\/b>|<i>|<\/i>/g, "");
 
-        
-        
-        
-
+        //This if statement is to avoid infinite loop
         if(this.summaryText !== this.state.convText) {
             const listGenres = this.props.genres;
-            const separateGenres = listGenres.map((genre) => <li key={genre}>{genre}</li>);
-            console.log(separateGenres);
+            const separateGenres = listGenres.map((genre) => 
+                <li key={genre}>{genre}</li>
+            );
 
             this.setState({
                 convText: this.summaryText,
@@ -50,7 +48,7 @@ class Display extends React.Component {
                 <div className="shows-details">
                     <h1 className="shows-title">{this.props.name}</h1>
                     <div className="flex-row">
-                        <span className="shows-rating"><i className="fa fa-star fa-fw"></i> {this.props.rating} / 10.0</span>
+                        <span className="shows-rating"><i className="fa fa-star fa-fw"></i> {this.props.rating} / 10</span>
                         <ul className="shows-genres">
                             {this.state.convGenre}
                         </ul>
