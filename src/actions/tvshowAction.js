@@ -12,10 +12,11 @@ export function loadShow(showName) {
                     response.data.name,
                     response.data.summary,
                     response.data.genres,
-                    response.data.rating.average
-                ));
-            
+                    response.data.rating.average,
+                )
+            );
         })
+
     }
 }
 

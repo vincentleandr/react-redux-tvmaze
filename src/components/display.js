@@ -52,7 +52,6 @@ class Display extends React.Component {
                         <ul className="shows-genres">
                             {this.state.convGenre}
                         </ul>
-
                     </div>
                     <p className="shows-summary">{this.state.convText}</p>
                 </div>
