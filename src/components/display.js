@@ -46,6 +46,7 @@ class Display extends React.Component {
                 </div>
                 
                 <div className="shows-details">
+                    <span id="errMsg"></span>
                     <h1 className="shows-title">{this.props.name}</h1>
                     <div className="flex-row">
                         <span className="shows-rating"><i className="fa fa-star fa-fw"></i> {this.props.rating} / 10</span>

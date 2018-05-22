@@ -6,6 +6,7 @@ import Display from '../components/display';
 
 import './styles/main.css';
 
+
 class App extends React.Component{
     constructor(props) {
         super(props);
@@ -33,12 +34,12 @@ class App extends React.Component{
             showDisp: 'show',
             gotoTop: 'top'
         });
-        
     }
 
     render() {
         return (
             <div className="container">
+
                 <form onSubmit={this.onSubmitForm}>
                     <div className={"searchbar-container animated fadeIn " + this.state.gotoTop}>
                         <input className="searchbar" value={this.state.input} onChange={this.onInputChange} placeholder="Try 'Game of Thrones'" autoFocus="autofocus"/>
@@ -55,10 +56,12 @@ class App extends React.Component{
                     >
                     </Display>
                 </div>
-                
             </div>
         );
     }
+
+
+    
 }
 
 const mapStateToProps = (state) => {

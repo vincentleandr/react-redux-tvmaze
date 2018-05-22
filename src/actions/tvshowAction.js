@@ -6,6 +6,7 @@ export function loadShow(showName) {
         const url = 'http://api.tvmaze.com/singlesearch/shows?q='+showName;
         return axios.get(url)
         .then((response) => {
+            document.getElementById('errMsg').textContent = '';
             dispatch(
                 loadDetails(
                     response.data.image.original, 
@@ -16,6 +17,10 @@ export function loadShow(showName) {
                 )
             );
         })
+        .catch(error => {
+            document.getElementById('errMsg').textContent = 'Sorry Nothing Here';
+        });
+        
 
     }
 }
