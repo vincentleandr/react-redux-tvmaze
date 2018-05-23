@@ -13,8 +13,12 @@ body, .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     transition: .3s;
+
+    .input-container {
+        width: 100%;
+        position: relative;
+    }
 
     .searchbar {
         width: 100%;
@@ -27,6 +31,7 @@ body, .container {
         font-size: 30px;
         font-weight: 400;
         color: $white;
+        box-sizing: border-box;
 
         &:focus {
             outline: 0;
@@ -46,6 +51,7 @@ body, .container {
         opacity: .6;
         cursor: pointer;
         transition: .3s;
+        height: 100%;
         position: absolute;
         right: 20px;
 
@@ -71,5 +77,59 @@ body, .container {
 
     .searchbtn {
         font-size: 24px;
+        top: 0;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .searchbar-container {
+        width: 90vw;
+
+        .input-container {
+            width: 90vw;
+        }
+    }
+
+    
+}
+
+@media only screen and (max-width: 700px) {
+    .searchbar-container {
+    
+        .searchbar {
+            font-size: 24px;
+            height: 55px;
+        }
+    
+        .searchbtn {
+            font-size: 24px;
+            right: 10px;
+        }
+    }
+
+    .searchbar-container.top {
+        width: 90%;
+    
+        .searchbar {
+            height: 45px;
+            font-size: 18px;
+        }
+    
+        .searchbtn {
+            font-size: 18px;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .searchbar-container {
+    
+        .searchbar {
+            font-size: 20px;
+        }
+    
+        .searchbtn {
+            font-size: 20px;
+        }
     }
 }

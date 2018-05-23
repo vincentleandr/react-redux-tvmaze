@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$bluegray".
-        on line 36 of C:\GitHub\react-redux-tvmaze\src\containers\styles\components.scss
+        on line 36 of C:\Project\GitHub\react-redux-tvmaze\src\containers\styles\components.scss
 
 31:             content: "";
 32:             position: absolute;
@@ -15,7 +15,7 @@ Error: Undefined variable: "$bluegray".
 41:     .shows-summary {
 
 Backtrace:
-C:\GitHub\react-redux-tvmaze\src\containers\styles\components.scss:36
+C:\Project\GitHub\react-redux-tvmaze\src\containers\styles\components.scss:36
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/variable.rb:49:in `_perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/node.rb:50:in `perform'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/script/tree/list_literal.rb:75:in `block in _perform'
@@ -88,4 +88,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$bluegray\".\A         on line 36 of C:\GitHub\react-redux-tvmaze\src\containers\styles\components.scss\A \A 31:             content: \"\";\A 32:             position: absolute;\A 33:             left: 0;\A 34:             bottom: -8px;\A 35:             width: 75px;\A 36:             border-top: 5px solid $bluegray;\A 37:             opacity: 0.7;\A 38:         }\A 39:     }\A 40: \A 41:     .shows-summary {"; }
+  content: "Error: Undefined variable: \"$bluegray\".\A         on line 36 of C:\Project\GitHub\react-redux-tvmaze\src\containers\styles\components.scss\A \A 31:             content: \"\";\A 32:             position: absolute;\A 33:             left: 0;\A 34:             bottom: -8px;\A 35:             width: 75px;\A 36:             border-top: 5px solid $bluegray;\A 37:             opacity: 0.7;\A 38:         }\A 39:     }\A 40: \A 41:     .shows-summary {"; }

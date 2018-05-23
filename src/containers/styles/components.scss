@@ -57,9 +57,10 @@
         display: flex;
         align-items: center;
         list-style: none;
+        padding: 0;
 
         li {
-            padding: 5px;
+            padding: 0 5px;
             margin-right: 5px;
             font-size: 14px;
             position: relative;
@@ -74,6 +75,10 @@
                 opacity: 0.3
             }
         }
+
+        li:first-child {
+            padding-left: 0;
+        }
         
         li:last-child {
             margin-right: 0;
@@ -85,7 +90,7 @@
     }
 }
 
-.flex-row {
+.info-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,4 +102,90 @@
 
 .show {
     display: block;
+}
+
+@media only screen and (max-width: 1400px) {
+    .display-inner-container {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .display-inner-container {
+        width: 90%;
+    }
+
+    .shows-img {
+        width: 30%;
+    }
+
+    .shows-details {
+        width: 65%;
+
+        .shows-title {
+            font-size: 50px;
+        }
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .display-container {
+        margin-top: 20px;
+    }
+
+    .shows-details {
+
+        .shows-title {
+            font-size: 34px;
+        }
+
+        .shows-summary {
+            font-size: 14px;
+        }
+    
+        .shows-rating {
+            font-size: 14px;
+            margin: 20px 0;
+        }
+
+        .shows-genres {
+            margin: 0;
+        }
+    }
+
+    .info-row {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .display-container {
+        margin-top: 0;
+    }
+
+    .shows-details {
+
+        .shows-title {
+            font-size: 24px;
+        }
+
+        .shows-summary {
+            font-size: 12px;
+            margin-top: 0;
+        }
+    
+        .shows-rating {
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        .shows-genres {
+
+            li {
+                font-size: 12px;
+            }
+        }
+    }
 }

@@ -6,26 +6,25 @@ export function loadShow(showName) {
         const url = 'http://api.tvmaze.com/singlesearch/shows?q='+showName;
         return axios.get(url)
         .then((response) => {
-            document.getElementById('errMsg').textContent = '';
             dispatch(
                 loadDetails(
                     response.data.image.original, 
                     response.data.name,
                     response.data.summary,
                     response.data.genres,
-                    response.data.rating.average,
+                    response.data.rating.average
                 )
             );
         })
         .catch(error => {
-            document.getElementById('errMsg').textContent = 'Sorry Nothing Here';
+            
         });
         
 
     }
 }
 
-export function loadDetails(showImage, showName, showSummary, showGenres, showRating) {
+export function loadDetails(showImage, showName, showSummary, showGenres, showRating, showNetwork) {
     return{
         type: "LOAD_DETAILS",
         image: showImage,

@@ -4,7 +4,7 @@ import * as actionCreators from '../actions/tvshowAction';
 
 import Display from '../components/display';
 
-import './styles/main.css';
+import './styles/main.min.css';
 
 
 class App extends React.Component{
@@ -42,8 +42,12 @@ class App extends React.Component{
 
                 <form onSubmit={this.onSubmitForm}>
                     <div className={"searchbar-container animated fadeIn " + this.state.gotoTop}>
-                        <input className="searchbar" value={this.state.input} onChange={this.onInputChange} placeholder="Try 'Game of Thrones'" autoFocus="autofocus"/>
-                        <button className="searchbtn" type="submit" onClick={this.props.loadshow}><i className="fa fa-search fa-fw"></i></button>
+                        <div class="input-container">
+                            <input className="searchbar" value={this.state.input} onChange={this.onInputChange} placeholder="Try 'Game of Thrones'" autoFocus="autofocus"/>
+
+                            <button className="searchbtn" type="submit" onClick={this.props.loadshow}><i className="fa fa-search fa-fw"></i></button>
+                        </div>
+                        
                     </div>
                 </form>
                 <div className={"display-container animated fadeIn " + this.state.showDisp}>

@@ -16,7 +16,7 @@ const tvshowReducer = (state = defaultState, action) => {
                 name: action.name,
                 summary: action.summary,
                 genres: action.genres,
-                rating: action.rating,
+                rating: action.rating
             };
 
         default:

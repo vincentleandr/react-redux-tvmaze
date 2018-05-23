@@ -7,12 +7,15 @@ class Display extends React.Component {
 
         this.state = {
             convText: '',
-            convGenre: ''
+            convGenre: '',
+            noNetwork: ''
         }
     }
 
     componentDidMount() {
         this.parallax = new Parallax(this.refs.poster);
+
+        
     }
 
     componentDidUpdate() {
@@ -42,17 +45,19 @@ class Display extends React.Component {
             <div className="display-inner-container animated fadeIn">
                 
                 <div className="shows-img" ref="poster">
-                    <img src={this.props.image} alt="Show's Poster" data-depth="0.15" />
+                    <img src={this.props.image} alt={this.props.name} data-depth="0.15" />
                 </div>
                 
                 <div className="shows-details">
                     <span id="errMsg"></span>
                     <h1 className="shows-title">{this.props.name}</h1>
-                    <div className="flex-row">
-                        <span className="shows-rating"><i className="fa fa-star fa-fw"></i> {this.props.rating} / 10</span>
+                    <div className="info-row">
                         <ul className="shows-genres">
                             {this.state.convGenre}
                         </ul>
+
+                        <span className="shows-rating"><i className="fa fa-star fa-fw"></i> {this.props.rating} / 10</span>
+                        
                     </div>
                     <p className="shows-summary">{this.state.convText}</p>
                 </div>
