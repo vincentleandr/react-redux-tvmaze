@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export function loadShow(showName) {
+export function loadShow(showName, isLoading) {
     return (dispatch) => {
 
         const url = 'http://api.tvmaze.com/singlesearch/shows?q='+showName;

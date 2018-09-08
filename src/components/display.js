@@ -14,8 +14,6 @@ class Display extends React.Component {
 
     componentDidMount() {
         this.parallax = new Parallax(this.refs.poster);
-
-        
     }
 
     componentDidUpdate() {

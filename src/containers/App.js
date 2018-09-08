@@ -14,7 +14,8 @@ class App extends React.Component{
         this.state = {
             input: '',
             showDisp: 'hidden',
-            gotoTop: ''
+            gotoTop: '',
+            loading: true
         }
 
         this.onInputChange = this.onInputChange.bind(this);
@@ -28,15 +29,18 @@ class App extends React.Component{
     onSubmitForm(event) {
         event.preventDefault();
 
-        this.props.loadShow(this.state.input);
+        this.props.loadShow(this.state.input, this.state.loading);
         this.setState({
             input: '',
             showDisp: 'show',
-            gotoTop: 'top'
+            gotoTop: 'top',
+            loading: false
         });
     }
 
     render() {
+        const loading = this.state.loading;
+        console.log(loading);
         return (
             <div className="container">
 
@@ -50,7 +54,10 @@ class App extends React.Component{
                         
                     </div>
                 </form>
-                <div className={"display-container animated fadeIn " + this.state.showDisp}>
+                {loading ? 
+                'Loading...' 
+                : 
+                <div className={"display-container animated fadeIn " + this.state.showDisp}>   
                     <Display 
                         image={this.props.image}
                         name={this.props.name} 
@@ -60,6 +67,7 @@ class App extends React.Component{
                     >
                     </Display>
                 </div>
+                }
             </div>
         );
     }
