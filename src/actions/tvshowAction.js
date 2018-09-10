@@ -1,9 +1,13 @@
 import axios from 'axios';
 
-export function loadShow(showName, isLoading) {
+export function loadShow(showName) {
+    
     return (dispatch) => {
 
         const url = 'http://api.tvmaze.com/singlesearch/shows?q='+showName;
+
+        dispatch({ type: "IS_LOADING" });
+
         return axios.get(url)
         .then((response) => {
             dispatch(
@@ -16,15 +20,15 @@ export function loadShow(showName, isLoading) {
                 )
             );
         })
-        .catch(error => {
-            
+        .catch(() => {
+            dispatch({ type: "LOAD_ERROR" });
         });
         
 
     }
 }
 
-export function loadDetails(showImage, showName, showSummary, showGenres, showRating, showNetwork) {
+export function loadDetails(showImage, showName, showSummary, showGenres, showRating) {
     return{
         type: "LOAD_DETAILS",
         image: showImage,

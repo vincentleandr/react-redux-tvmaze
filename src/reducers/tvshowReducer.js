@@ -3,7 +3,9 @@ let defaultState = {
     name: '',
     summary: '',
     genres: '',
-    rating: ''
+    rating: '',
+    error: '',
+    loading: false
 }
 
 const tvshowReducer = (state = defaultState, action) => {
@@ -12,12 +14,25 @@ const tvshowReducer = (state = defaultState, action) => {
         case "LOAD_DETAILS":
             return {
                 ...state,
+                loading: false,
                 image: action.image,
                 name: action.name,
                 summary: action.summary,
                 genres: action.genres,
                 rating: action.rating
+                
             };
+        case "LOAD_ERROR":
+            return {
+                ...state,
+                loading: false,
+                error: 'Error Loading!'
+            }
+        case "IS_LOADING":
+            return {
+                ...state,
+                loading: true
+            }
 
         default:
             return {

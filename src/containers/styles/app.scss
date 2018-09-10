@@ -4,6 +4,7 @@ body, .container {
     font-family: $font-primary;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 .searchbar-container {
@@ -78,6 +79,49 @@ body, .container {
     .searchbtn {
         font-size: 24px;
         top: 0;
+    }
+}
+
+.loading-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+}
+
+
+.loading{
+    circle{
+        animation-name: change;
+        animation-duration : 1.75s;
+        animation-iteration-count:infinite;
+        animation-fill-mode:both;
+    }
+    circle:nth-child(2) {
+        animation-delay: 0.28875s;
+    }
+    circle:nth-child(3) {
+        animation-delay: 0.5775s;
+    }
+}
+
+@keyframes change{
+    0%{
+        opacity:0.2;
+        transform: scale(1,1);
+        }
+    30%{
+        opacity:1;
+        transform: scale(1.1,1.1);
+    }
+    100%{
+        opacity:0.2;
+        transform: scale(1,1);
     }
 }
 

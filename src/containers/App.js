@@ -14,8 +14,7 @@ class App extends React.Component{
         this.state = {
             input: '',
             showDisp: 'hidden',
-            gotoTop: '',
-            loading: true
+            gotoTop: ''
         }
 
         this.onInputChange = this.onInputChange.bind(this);
@@ -29,34 +28,30 @@ class App extends React.Component{
     onSubmitForm(event) {
         event.preventDefault();
 
-        this.props.loadShow(this.state.input, this.state.loading);
+        this.props.loadShow(this.state.input);
+
         this.setState({
             input: '',
             showDisp: 'show',
-            gotoTop: 'top',
-            loading: false
+            gotoTop: 'top'
         });
     }
 
     render() {
-        const loading = this.state.loading;
-        console.log(loading);
+
         return (
             <div className="container">
 
                 <form onSubmit={this.onSubmitForm}>
                     <div className={"searchbar-container animated fadeIn " + this.state.gotoTop}>
-                        <div class="input-container">
+                        <div className="input-container">
                             <input className="searchbar" value={this.state.input} onChange={this.onInputChange} placeholder="Try 'Game of Thrones'" autoFocus="autofocus"/>
 
                             <button className="searchbtn" type="submit" onClick={this.props.loadshow}><i className="fa fa-search fa-fw"></i></button>
                         </div>
-                        
                     </div>
                 </form>
-                {loading ? 
-                'Loading...' 
-                : 
+                
                 <div className={"display-container animated fadeIn " + this.state.showDisp}>   
                     <Display 
                         image={this.props.image}
@@ -64,16 +59,13 @@ class App extends React.Component{
                         summary={this.props.summary}
                         genres={this.props.genres}
                         rating={this.props.rating}
+                        loading={this.props.loading}
                     >
                     </Display>
                 </div>
-                }
             </div>
         );
     }
-
-
-    
 }
 
 const mapStateToProps = (state) => {
