@@ -21,7 +21,9 @@ export function loadShow(showName) {
             );
         })
         .catch(() => {
-            dispatch({ type: "LOAD_ERROR" });
+            dispatch(
+                loadError()
+            );
         });
         
 
@@ -36,5 +38,16 @@ export function loadDetails(showImage, showName, showSummary, showGenres, showRa
         summary: showSummary,
         genres: showGenres,
         rating: showRating
+    }
+}
+
+export function loadError() {
+    return{
+        type: "LOAD_ERROR",
+        image: 'N/A',
+        name: 'Not Found',
+        summary: 'N/A',
+        genres: 'N/A',
+        rating: 'N/A'
     }
 }

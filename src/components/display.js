@@ -1,5 +1,4 @@
 import React from 'react';
-import Parallax from 'parallax-js';
 
 class Display extends React.Component {
     constructor(props) {
@@ -8,34 +7,44 @@ class Display extends React.Component {
         this.state = {
             convText: '',
             convGenre: '',
-            noNetwork: ''
+            convRating: ''
         }
-    }
-
-    componentDidMount() {
-        this.parallax = new Parallax(this.refs.poster);
     }
 
     componentDidUpdate() {
         let summaryText = this.props.summary;
-        this.summaryText = summaryText.replace(/<p>|<\/p>|<b>|<\/b>|<i>|<\/i>/g, "");
+
+        if(summaryText == null) {
+            this.summaryText = 'N/A'
+        } else {
+            this.summaryText = summaryText.replace(/<p>|<\/p>|<b>|<\/b>|<i>|<\/i>/g, "");
+        }
 
         //This if statement is to avoid infinite loop
         if(this.summaryText !== this.state.convText) {
-            const listGenres = this.props.genres;
-            const separateGenres = listGenres.map((genre) => 
-                <li key={genre}>{genre}</li>
-            );
+            let listGenres = this.props.genres;
+            let showRating = this.props.rating;
 
+            if(listGenres.length === 0 || listGenres === 'N/A') {
+                this.listGenres = 'N/A';
+            } else {
+                this.listGenres = listGenres.map((genre) => 
+                    <li key={genre}>{genre}</li>
+                );
+            }
+
+            if(showRating == null) {
+                this.showRating = 'N/A';
+            } else {
+                this.showRating = showRating;
+            }
+            
             this.setState({
                 convText: this.summaryText,
-                convGenre: separateGenres
+                convGenre: this.listGenres,
+                convRating: this.showRating
             });
         }
-    }
-    
-    componentWillUnmount() {
-        this.parallax.disable();
     }
 
     render() {
@@ -54,8 +63,8 @@ class Display extends React.Component {
                 :
 
                 <div className="display-inner-container animated fadeIn">
-                    <div className="shows-img" ref="poster">
-                        <img src={this.props.image} alt={this.props.name} data-depth="0.15" />
+                    <div className="shows-img">
+                        <img src={this.props.image} alt={this.props.name}/>
                     </div>
                     
                     <div className="shows-details">
@@ -66,7 +75,7 @@ class Display extends React.Component {
                                 {this.state.convGenre}
                             </ul>
 
-                            <span className="shows-rating"><i className="fa fa-star fa-fw"></i> {this.props.rating} / 10</span>
+                            <span className="shows-rating"><i className="fa fa-star fa-fw"></i> {this.state.convRating} / 10</span>
                             
                         </div>
                         <p className="shows-summary" id="summary">{this.state.convText}</p>

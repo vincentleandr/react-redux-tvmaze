@@ -4,7 +4,6 @@ let defaultState = {
     summary: '',
     genres: '',
     rating: '',
-    error: '',
     loading: false
 }
 
@@ -20,13 +19,16 @@ const tvshowReducer = (state = defaultState, action) => {
                 summary: action.summary,
                 genres: action.genres,
                 rating: action.rating
-                
             };
         case "LOAD_ERROR":
             return {
                 ...state,
                 loading: false,
-                error: 'Error Loading!'
+                image: 'N/A',
+                name: 'Not Found',
+                summary: 'N/A',
+                genres: 'N/A',
+                rating: 'N/A'
             }
         case "IS_LOADING":
             return {
