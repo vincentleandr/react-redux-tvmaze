@@ -45,7 +45,7 @@ class App extends React.Component{
                 <form onSubmit={this.onSubmitForm}>
                     <div className={"searchbar-container animated fadeIn " + this.state.gotoTop}>
                         <div className="input-container">
-                            <input className="searchbar" value={this.state.input} onChange={this.onInputChange} placeholder="Try 'Game of Thrones'" autoFocus="autofocus"/>
+                            <input className="searchbar" type="text" value={this.state.input} onChange={this.onInputChange} placeholder="Try 'Game of Thrones'" autoFocus="autofocus"/>
 
                             <button className="searchbtn" type="submit" onClick={this.props.loadshow}><i className="fa fa-search fa-fw"></i></button>
                         </div>
